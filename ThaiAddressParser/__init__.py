@@ -98,7 +98,7 @@ def download_thai_address():
             res[p][d] = list(set(res[p][d]))
     json.dump(res, open('th_provinces_districts_sub_districts.json', 'w', encoding='utf-8'),
               ensure_ascii=False)
-    json.dump(res, open('th_en_db.json', 'w', encoding='utf-8'), ensure_ascii=False)
+    json.dump(th_en, open('th_en_db.json', 'w', encoding='utf-8'), ensure_ascii=False)
     print('Finish the downloading!')
 
 
@@ -1041,8 +1041,8 @@ def parse(address):
     return {
         'original_address': address,
         'parsed_address': res[0],
-        'province': res[-1],
-        'district': res[-2],
-        'sub_district': res[-3],
+        'province': {'thai': res[-1], 'en': app.th_en_translator[res[-1]]},
+        'district': {'thai': res[-2], 'en': app.th_en_translator[res[-2]]},
+        'sub_district': {'thai': res[-3], 'en': app.th_en_translator[res[-3]]},
         'remaining_address': res[-4]
     }

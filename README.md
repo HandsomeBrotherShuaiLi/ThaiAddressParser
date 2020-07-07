@@ -1,6 +1,6 @@
 # ThaiAddressParser  
 ![](https://img.shields.io/badge/language-python3-green.svg) ![](https://img.shields.io/badge/author-Shuai_Li-black.svg) ![](https://img.shields.io/badge/building-pass-yellow.svg) ![](https://img.shields.io/badge/license-MIT-pink.svg)      
-`ThaiAddressParser` is a fast and unlimited python library which can deliver the structured Thailand address from the original free Thai sentence.   
+`ThaiAddressParser` is a fast and unlimited python library which can deliver the structured Thailand address from the original free Thai sentence with translations.   
 Meanwhile, it can extract the province, district, sub district from the original address sentence.
 It is compatible with Python 3.  
 This unique algorithm is developed by [the author](https://github.com/HandsomeBrotherShuaiLi)
@@ -10,22 +10,22 @@ This unique algorithm is developed by [the author](https://github.com/HandsomeBr
 * Easy to use and understand
 * Robust
 * Thread-safe
+* Thai-En address Translation 
 ## Installation
+For python3:
 ```angular2
 pip3 install ThaiAddressParser
+```
+For python2:
+```angular2
+pip install ThaiAddressParser
 ```
 ## Usage
 ```angular2
 >>> import ThaiAddressParser
 >>> address = '7503 ถ.ราชญาวิริกษา ต.ม.ก่องคร อ.เมืองสมุทรสงคราม 10 จ.สมุทรสงคราม'
 >>> ThaiAddressParser.parse(address)
-{'original_address': '7503 ถ.ราชญาวิริกษา ต.ม.ก่องคร อ.เมืองสมุทรสงคราม 10 จ.สมุทรสงคราม', 'parsed_address': '7503 ถ.ราชญาวิริกษา ต.แม่กลอง อ.อุ้มผาง จ.ตาก', 'province': 'ตาก', 'district': 'อุ้มผาง', 'sub_district': 'แม่กลอง', 'remaining_address': '7503 ถ.ราชญาวิริกษา'}
->>> address = '263 หมู่ที่ 1 ต.นาซาว อ.เชียงคาน จ.เลย'
->>> ThaiAddressParser.parse(address)
-{'original_address': '263 หมู่ที่ 1 ต.นาซาว อ.เชียงคาน จ.เลย', 'parsed_address': '263 หมู่ที่ 1 ต.นาซ่าว อ.เชียงคาน จ.เลย', 'province': 'เลย', 'district': 'เชียงคาน', 'sub_district': 'นาซ่าว', 'remaining_address': '263 หมู่ที่ 1'}
->>> address = '1 2001 00037 15'
->>> ThaiAddressParser.parse(address)
-{'original_address': '1 2001 00037 15', 'parsed_address': 'null', 'province': 'null', 'district': 'null', 'sub_district': 'null', 'remaining_address': 'null'}
+{'original_address': '7503 ถ.ราชญาวิริกษา ต.ม.ก่องคร อ.เมืองสมุทรสงคราม 10 จ.สมุทรสงคราม', 'parsed_address': '7503 ถ.ราชญาวิริกษา ต.แม่กลอง อ.อุ้มผาง จ.ตาก', 'province': {'thai': 'ตาก', 'en': 'Tak'}, 'district': {'thai': 'อุ้มผาง', 'en': 'Umphang'}, 'sub_district': {'thai': 'แม่กลอง', 'en': 'Mae Klong'}, 'remaining_address': '7503 ถ.ราชญาวิริกษา'}
 ```
 
 ## License
