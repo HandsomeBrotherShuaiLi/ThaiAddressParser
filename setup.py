@@ -19,7 +19,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='ThaiAddressParser',
-    version='0.0.2',
+    version='0.0.1',
     author='Shuai Li',
     author_email='li.shuai@wustl.edu',
     url='https://github.com/HandsomeBrotherShuaiLi/ThaiAddressParser',

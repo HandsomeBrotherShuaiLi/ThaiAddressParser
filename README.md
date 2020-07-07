@@ -1,5 +1,5 @@
 # ThaiAddressParser  
-![](https://img.shields.io/badge/language-python3-green.svg) ![](https://img.shields.io/badge/author-Shuai_Li-black.svg) ![](https://img.shields.io/badge/building-pass-yellow.svg) ![](https://img.shields.io/badge/license-MIT-pink.svg) ![](https://img.shields.io/badge/version-0.0.1-red.svg)    
+![](https://img.shields.io/badge/language-python3-green.svg) ![](https://img.shields.io/badge/author-Shuai_Li-black.svg) ![](https://img.shields.io/badge/building-pass-yellow.svg) ![](https://img.shields.io/badge/license-MIT-pink.svg)      
 `ThaiAddressParser` is a fast and unlimited python library which can deliver the structured Thailand address from the original free Thai sentence.   
 Meanwhile, it can extract the province, district, sub district from the original address sentence.
 It is compatible with Python 3.  
