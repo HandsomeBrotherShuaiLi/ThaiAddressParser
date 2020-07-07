@@ -1041,8 +1041,8 @@ def parse(address):
     return {
         'original_address': address,
         'parsed_address': res[0],
-        'province': {'Thai': res[-1], 'En': app.th_en_translator[res[-1]]},
-        'district': {'Thai': res[-2], 'En': app.th_en_translator[res[-2]]},
-        'sub_district': {'Thai': res[-3], 'En': app.th_en_translator[res[-3]]},
+        'province': res[-1],
+        'district': res[-2],
+        'sub_district': res[-3],
         'remaining_address': res[-4]
     }

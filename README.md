@@ -1,7 +1,7 @@
 # ThaiAddressParser  
 ![](https://img.shields.io/badge/language-python3-green.svg) ![](https://img.shields.io/badge/author-Shuai_Li-black.svg) ![](https://img.shields.io/badge/building-pass-yellow.svg) ![](https://img.shields.io/badge/license-MIT-pink.svg) ![](https://img.shields.io/badge/version-0.0.1-red.svg)    
 `ThaiAddressParser` is a fast and unlimited python library which can deliver the structured Thailand address from the original free Thai sentence.   
-Meanwhile, it can extract the province, district, sub district from the original address sentence and translate them to English words.
+Meanwhile, it can extract the province, district, sub district from the original address sentence.
 It is compatible with Python 3.  
 This unique algorithm is developed by [the author](https://github.com/HandsomeBrotherShuaiLi)
 ## Feature  
@@ -16,8 +16,18 @@ pip install ThaiAddressParser
 ```
 ## Usage
 ```angular2
-test
+>>> import ThaiAddressParser
+>>> address = '7503 ถ.ราชญาวิริกษา ต.ม.ก่องคร อ.เมืองสมุทรสงคราม 10 จ.สมุทรสงคราม'
+>>> ThaiAddressParser.parse(address)
+{'original_address': '7503 ถ.ราชญาวิริกษา ต.ม.ก่องคร อ.เมืองสมุทรสงคราม 10 จ.สมุทรสงคราม', 'parsed_address': '7503 ถ.ราชญาวิริกษา ต.แม่กลอง อ.อุ้มผาง จ.ตาก', 'province': 'ตาก', 'district': 'อุ้มผาง', 'sub_district': 'แม่กลอง', 'remaining_address': '7503 ถ.ราชญาวิริกษา'}
+>>> address = '263 หมู่ที่ 1 ต.นาซาว อ.เชียงคาน จ.เลย'
+>>> ThaiAddressParser.parse(address)
+{'original_address': '263 หมู่ที่ 1 ต.นาซาว อ.เชียงคาน จ.เลย', 'parsed_address': '263 หมู่ที่ 1 ต.นาซ่าว อ.เชียงคาน จ.เลย', 'province': 'เลย', 'district': 'เชียงคาน', 'sub_district': 'นาซ่าว', 'remaining_address': '263 หมู่ที่ 1'}
+>>> address = '1 2001 00037 15'
+>>> ThaiAddressParser.parse(address)
+{'original_address': '1 2001 00037 15', 'parsed_address': 'null', 'province': 'null', 'district': 'null', 'sub_district': 'null', 'remaining_address': 'null'}
 ```
+
 ## License
 ```angular2
 MIT License
