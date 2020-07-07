@@ -12,7 +12,7 @@ This unique algorithm is developed by [the author](https://github.com/HandsomeBr
 * Thread-safe
 ## Installation
 ```angular2
-pip install ThaiAddressParser
+pip3 install ThaiAddressParser
 ```
 ## Usage
 ```angular2

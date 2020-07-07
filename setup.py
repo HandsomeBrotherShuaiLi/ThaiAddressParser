@@ -19,7 +19,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='ThaiAddressParser',
-    version='0.0.3',
+    version='0.0.4',
     author='Shuai Li',
     author_email='li.shuai@wustl.edu',
     url='https://github.com/HandsomeBrotherShuaiLi/ThaiAddressParser',
@@ -27,7 +27,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
-    install_requires=['bs4','requests'],
+    install_requires=['bs4','requests','tqdm'],
     classifiers=(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
