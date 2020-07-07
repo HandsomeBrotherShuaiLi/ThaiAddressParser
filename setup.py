@@ -22,7 +22,7 @@ setuptools.setup(
     version='0.0.1',
     author='Shuai Li',
     author_email='li.shuai@wustl.edu',
-    url='',
+    url='https://github.com/HandsomeBrotherShuaiLi/ThaiAddressParser',
     description="Thailand Address Parser",
     long_description=long_description,
     long_description_content_type="text/markdown",

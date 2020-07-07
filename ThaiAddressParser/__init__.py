@@ -17,6 +17,7 @@ import json
 import difflib
 import random
 
+
 def drop_nan(addr_list):
     '''
     drop useless parts of address list
@@ -1026,14 +1027,16 @@ class ThaiAddressParserClass(object):
         return result
 
 
+if os.path.exists('th_provinces_districts_sub_districts.json') and os.path.exists('th_en_db.json'):
+    app = ThaiAddressParserClass(file_path='th_provinces_districts_sub_districts.json',
+                                 translation_db='th_en_db.json')
+else:
+    download_thai_address()
+    app = ThaiAddressParserClass(file_path='th_provinces_districts_sub_districts.json',
+                                 translation_db='th_en_db.json')
+
+
 def parse(address):
-    if os.path.exists('th_provinces_districts_sub_districts.json') and os.path.exists('th_en_db.json'):
-        app = ThaiAddressParserClass(file_path='th_provinces_districts_sub_districts.json',
-                                     translation_db='th_en_db.json')
-    else:
-        download_thai_address()
-        app = ThaiAddressParserClass(file_path='th_provinces_districts_sub_districts.json',
-                                     translation_db='th_en_db.json')
     res = app.parse(address)
     return {
         'original_address': address,
