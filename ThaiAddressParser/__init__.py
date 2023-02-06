@@ -67,7 +67,9 @@ def download_thai_address():
     url = 'https://en.wikipedia.org/wiki/List_of_tambon_in_Thailand'
     data = requests.get(url).text
     data = BeautifulSoup(data, "html.parser")
-    urls = data.find_all(name='ul')[0]
+    # urls = data.find_all(name='ul')[0]
+    # change of html structure in wikipedia
+    urls = data.select_one('div.mw-parser-output').find('ul')
     hrefs = urls.find_all(name='li')
     res = {}
     th_en = {}
